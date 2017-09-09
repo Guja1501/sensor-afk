@@ -1,8 +1,12 @@
 if(typeof axios === typeof undefined)
-	require('axios');
+	axios = require('axios');
 
 module.exports = class Lockscreen {
-	constructor(url, time = 30) {
+	constructor(url='/lockscreen', time = 30, method = 'post') {
+		if(!['post', 'put'].includes(method))
+			throw new RangeError(`Lockscreen method must be "post" or "put". Given "${method}"`);
+
+		this.method = method;
 		this.url = url;
 		this.time = time;
 		this.timeout = null;
@@ -41,7 +45,7 @@ module.exports = class Lockscreen {
 			window.location.reload();
 		};
 
-		axios.post(this.url)
+		axios[this.method](this.url)
 			.then(resolve).catch(reject);
 
 		return this;
