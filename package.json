@@ -2,7 +2,7 @@
   "name": "lockscreen-sensor",
   "version": "0.0.1",
   "description": "Lockscreen sensor",
-  "main": "index.js",
+  "main": "src/Lockscreen.js",
   "scripts": {
     "dev": "NODE_ENV=development webpack --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
     "watch": "NODE_ENV=development webpack --watch --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",

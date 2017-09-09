@@ -1,3 +1,3 @@
 const mix = require('laravel-mix');
 
-mix.js('src/index.js', 'dist/losckscreen-sensor.js');
+mix.js('src/app.js', 'dist/losckscreen-sensor.js');
