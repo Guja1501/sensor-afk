@@ -1,0 +1,2 @@
+
+window.Lockscreen = require('./Lockscreen');
