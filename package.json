@@ -1,0 +1,23 @@
+{
+  "name": "lockscreen-sensor",
+  "version": "0.0.1",
+  "description": "Lockscreen sensor",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Guja1501/lockscreen-sensor.git"
+  },
+  "keywords": [
+    "Lockscreen",
+    "Sensor"
+  ],
+  "author": "Guja Babunashvili",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Guja1501/lockscreen-sensor/issues"
+  },
+  "homepage": "https://github.com/Guja1501/lockscreen-sensor#readme"
+}
