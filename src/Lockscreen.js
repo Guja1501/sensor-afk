@@ -2,7 +2,9 @@ if(typeof axios === typeof undefined)
 	axios = require('axios');
 
 module.exports = class Lockscreen {
-	constructor(url='/lockscreen', time = 30, method = 'post') {
+	constructor(options = {}) {
+		let { url, time, method, events } = Lockscreen.filterOptions(options);
+
 		if(!['post', 'put'].includes(method))
 			throw new RangeError(`Lockscreen method must be "post" or "put". Given "${method}"`);
 
@@ -12,6 +14,16 @@ module.exports = class Lockscreen {
 		this.timeout = null;
 
 		this.flush();
+		this.eventRegistration();
+	}
+
+	static filterOptions(options = {}){
+		return Object.assign({}, {
+			url: '/lockscreen',
+			time: 30,
+			method: 'post',
+			events: 'click wheel mousemove keydown keyup keypress',
+		}, options);
 	}
 
 	flush() {
@@ -49,5 +61,11 @@ module.exports = class Lockscreen {
 			.then(resolve).catch(reject);
 
 		return this;
+	}
+
+	eventRegistration(){
+		for(event of this.events.split(' ')) {
+			document.addEventListener(event, this.flush.bind(this), false);
+		}
 	}
 };
