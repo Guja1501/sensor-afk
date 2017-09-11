@@ -1,6 +1,6 @@
 {
   "name": "sensor-afk",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "SensorAFK triggers event when client goes away from keyboard",
   "main": "src/SensorAFK.js",
   "scripts": {
