@@ -5,8 +5,8 @@ module.exports = class Lockscreen {
 	constructor(options = {}) {
 		let { url, time, method, events } = Lockscreen.filterOptions(options);
 
-		if(!['post', 'put'].includes(method))
-			throw new RangeError(`Lockscreen method must be "post" or "put". Given "${method}"`);
+		if(!Lockscreen.allowedMethods.includes(method))
+			throw new RangeError(`Lockscreen method must be one of this list: ${Lockscreen.allowedMethods.join(',')}. Given "${method}"`);
 
 		this.method = method;
 		this.url = url;
@@ -24,6 +24,15 @@ module.exports = class Lockscreen {
 			method: 'post',
 			events: 'click wheel mousemove keydown keyup keypress',
 		}, options);
+	}
+	static get allowedMethods(){
+		return [
+			// 'get',
+			'post',
+			'put',
+			'patch',
+			'delete'
+		];
 	}
 
 	flush() {
