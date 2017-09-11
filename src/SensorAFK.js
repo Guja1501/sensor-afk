@@ -1,5 +1,6 @@
 module.exports = class SensorAFK {
 	constructor(options = {}) {
+		SensorAFK.initStatic();
 		let { time, sensors, node } = SensorAFK.filterOptions(options);
 
 		this.node = node;
