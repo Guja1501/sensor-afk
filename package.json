@@ -1,30 +1,30 @@
 {
-  "name": "lockscreen-sensor",
+  "name": "sensor-afk",
   "version": "1.0.0",
-  "description": "Lockscreen sensor",
-  "main": "src/Lockscreen.js",
+  "description": "SensorAFK triggers event when client goes away from keyboard",
+  "main": "src/SensorAFK.js",
   "scripts": {
     "dev": "NODE_ENV=development webpack --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
     "watch": "NODE_ENV=development webpack --watch --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
     "hot": "NODE_ENV=development webpack-dev-server --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
-    "production": "NODE_ENV=production webpack --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
+    "production": "NODE_ENV=production webpack --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "prod": "npm run production"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Guja1501/lockscreen-sensor.git"
+    "url": "git+https://github.com/Guja1501/sensor-afk.git"
   },
   "keywords": [
-    "Lockscreen",
+    "AFK",
     "Sensor"
   ],
   "author": "Guja Babunashvili",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Guja1501/lockscreen-sensor/issues"
+    "url": "https://github.com/Guja1501/sensor-afk/issues"
   },
-  "homepage": "https://github.com/Guja1501/lockscreen-sensor#readme",
-  "dependencies": {
-    "axios": "^0.16.2",
+  "homepage": "https://github.com/Guja1501/sensor-afk#readme",
+  "devDependencies": {
     "laravel-mix": "^1.4.2"
   }
 }

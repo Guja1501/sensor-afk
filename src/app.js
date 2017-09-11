@@ -1,2 +1,3 @@
+import SensorAFK from './SensorAFK';
 
-window.Lockscreen = require('./Lockscreen');
+window.SensorAFK = SensorAFK;
