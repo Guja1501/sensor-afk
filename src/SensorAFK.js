@@ -40,12 +40,12 @@ module.exports = class SensorAFK {
 	}
 
 	flush() {
-		SensorAFK.trigger(SensorAFK.events.flush);
+		this.trigger(SensorAFK.events.flush);
 		this.stop().start();
 	}
 
 	stop() {
-		SensorAFK.trigger(SensorAFK.events.stop);
+		this.trigger(SensorAFK.events.stop);
 		if (this.timeout !== null) {
 			try {
 				clearTimeout(this.timeout);
@@ -59,7 +59,7 @@ module.exports = class SensorAFK {
 	}
 
 	start() {
-		SensorAFK.trigger(SensorAFK.events.start);
+		this.trigger(SensorAFK.events.start);
 		this.timeout = setTimeout(() => {
 			this.afk();
 		}, this.time);
