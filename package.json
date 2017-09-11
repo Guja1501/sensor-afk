@@ -1,6 +1,6 @@
 {
   "name": "lockscreen-sensor",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Lockscreen sensor",
   "main": "src/Lockscreen.js",
   "scripts": {
