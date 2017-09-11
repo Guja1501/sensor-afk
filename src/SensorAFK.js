@@ -1,7 +1,8 @@
 export default class SensorAFK {
 	constructor(options = {}) {
-		let { time, sensors } = SensorAFK.filterOptions(options);
+		let { time, sensors, node } = SensorAFK.filterOptions(options);
 
+		this.node = node;
 		this.time = time;
 		this.sensors = Array.isArray(sensors) ? sensors : sensors.split(' ');
 		this.timeout = null;
@@ -18,6 +19,7 @@ export default class SensorAFK {
 		this.defaultOptions = {
 			time: 30,
 			sensors: 'click wheel mousemove keydown keyup keypress',
+			node: document
 		};
 
 		this.events = {
@@ -33,7 +35,7 @@ export default class SensorAFK {
 	}
 
 	static trigger(event){
-		document.dispatchEvent(event);
+		this.node.dispatchEvent(event);
 	}
 
 	flush() {
@@ -72,7 +74,7 @@ export default class SensorAFK {
 
 	eventRegistration(){
 		for(event of this.sensors) {
-			document.addEventListener(event, this.flush.bind(this), false);
+			this.node.addEventListener(event, this.flush.bind(this), false);
 		}
 	}
 };
