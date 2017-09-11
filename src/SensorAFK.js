@@ -35,7 +35,7 @@ module.exports = class SensorAFK {
 		return Object.assign({}, SensorAFK.defaultOptions, options);
 	}
 
-	static trigger(event){
+	trigger(event){
 		this.node.dispatchEvent(event);
 	}
 
@@ -68,7 +68,7 @@ module.exports = class SensorAFK {
 	}
 
 	afk() {
-		SensorAFK.trigger(SensorAFK.events.afk);
+		this.trigger(SensorAFK.events.afk);
 
 		return this;
 	}
