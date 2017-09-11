@@ -1,4 +1,4 @@
-export default class SensorAFK {
+module.exports = class SensorAFK {
 	constructor(options = {}) {
 		let { time, sensors, node } = SensorAFK.filterOptions(options);
 
@@ -31,7 +31,7 @@ export default class SensorAFK {
 	}
 
 	static filterOptions(options = {}){
-		return Object.assign({}, filterOptions.defaultOptions, options);
+		return Object.assign({}, SensorAFK.defaultOptions, options);
 	}
 
 	static trigger(event){
@@ -73,8 +73,8 @@ export default class SensorAFK {
 	}
 
 	eventRegistration(){
-		for(event of this.sensors) {
-			this.node.addEventListener(event, this.flush.bind(this), false);
+		for(let sensor of this.sensors) {
+			this.node.addEventListener(sensor, this.flush.bind(this), false);
 		}
 	}
 };

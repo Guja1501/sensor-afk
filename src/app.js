@@ -1,3 +1,1 @@
-import SensorAFK from './SensorAFK';
-
-window.SensorAFK = SensorAFK;
+window.SensorAFK = require('./SensorAFK');
