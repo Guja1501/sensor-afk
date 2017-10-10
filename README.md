@@ -19,7 +19,7 @@ This package can be installed with:
 
 ### Examples
 
-```
+```js
 const SensorAFK = require('sensor-afk');
 
 let wasAfk = false;
@@ -53,7 +53,7 @@ sensor.toggle(); // toggle on/off sensor
 
 Default Options:
 
-```
+```js
 {
 	time: 30,
 	sensors: 'click wheel mousemove keydown keyup keypress',
