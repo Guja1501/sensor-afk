@@ -4,11 +4,7 @@
   "description": "SensorAFK triggers event when client goes away from keyboard",
   "main": "src/SensorAFK.js",
   "scripts": {
-    "dev": "NODE_ENV=development webpack --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
-    "watch": "NODE_ENV=development webpack --watch --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
-    "hot": "NODE_ENV=development webpack-dev-server --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
-    "production": "NODE_ENV=production webpack --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
-    "prod": "npm run production"
+    "build": "esbuild src/app.js --bundle --minify --outfile=dist/sensor-afk.js"
   },
   "repository": {
     "type": "git",
@@ -25,6 +21,6 @@
   },
   "homepage": "https://github.com/Guja1501/sensor-afk#readme",
   "devDependencies": {
-    "laravel-mix": "^4.1.2"
+    "esbuild": "^0.21.5"
   }
 }
