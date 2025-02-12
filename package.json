@@ -21,6 +21,6 @@
   },
   "homepage": "https://github.com/Guja1501/sensor-afk#readme",
   "devDependencies": {
-    "esbuild": "^0.21.5"
+    "esbuild": "^0.25.0"
   }
 }
